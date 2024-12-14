@@ -71,3 +71,37 @@ console.log(Object.entries(tinderUser));
 
 console.log(tinderUser.hasOwnProperty('isLoggedIn')) // true
 
+
+// Object Destructring
+
+const course = {
+    coursename: "js",
+    price: "999",
+    courseInstructor: "suman"
+}
+
+// course.courseInstructor
+
+const {courseInstructor: instructor} = course
+
+console.log(instructor); // suman
+
+
+// // const navbar = (props.company // {company}) => {
+
+// }
+// navbar(company = "suman")
+
+
+// API
+// {
+//     "name": "suman",
+//     "coursename": "js",
+//     "price": "free"
+// }
+
+// [
+//     {},
+//     {},
+//     {}
+// ]
