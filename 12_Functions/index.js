@@ -38,3 +38,47 @@ function loginUserMessage(username){
 loginUserMessage("suman") // no output
 console.log(loginUserMessage("suman")) // suman just logged in
 console.log(loginUserMessage()) // undefined
+
+// shopping cart
+
+// if you do not know the number of arguments
+// rest operator ... it is also calle spred but uscase are different.
+
+// function calculateCartPrice(...num1){
+//     return num1
+// } 
+// console.log(calculateCartPrice(200, 400, 500)) // [ 200, 400, 500 ]
+
+function calculateCartPrice(val1, val2, ...num1){
+    return num1
+} 
+console.log(calculateCartPrice(200, 400, 500, 2000)) // [500, 2000]
+
+const user = {
+    username: "hitesh",
+    price: 199
+}
+
+function handleObject(anyoject){
+    console.log(`Username is ${anyoject.username} and price is ${anyoject.price}`);
+}
+
+handleObject(user)
+
+// problem occurs when price becomes prices so type safety must be handled.
+
+// we can pass also like this
+handleObject({
+    username: "sam",
+    price: 399
+})
+
+const newArray = [200, 400, 100, 600]
+
+function returnSecondValue(getArray){
+    return getArray[1]
+}
+
+// console.log(returnSecondValue(myNewArray));
+
+console.log(returnSecondValue([200, 400, 500, 1000]));
