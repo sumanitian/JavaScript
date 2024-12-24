@@ -6,6 +6,7 @@
 // console.log(myName.length); // 11 
 
 // console.log(myName.truelength);
+// Solve this challenge
 
 // jaha pe string ho by default truelength method aa jaye.
 
