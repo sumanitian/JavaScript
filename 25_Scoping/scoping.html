@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212121;">
+    
+</body>
+<script>
+    // function init(){
+    //     let name = "Mozilla";
+    //     function displayName(){
+    //         // displayName is the inner function, that forms the closure
+    //         console.log(name); // use variable declared in the parent function
+    //     }
+    //     displayName();
+    // }
+    // init();
+
+    // function k under jo variable hai wo outer me access nhi hote hai.
+    // lexical scoping
+    function outer(){
+        let username = "suman"
+        console.log(secret)
+        function inner(){
+            let secret = "my123"
+            console.log("inner", username) // suman
+        }
+        function innerTwo(){
+            console.log("inner Two", username)
+            console.log(secret); // error
+        }
+    }
+    outer()
+    console.log("outer", username); // uncaught ReferenceError: username is not defined.
+</script>
+</html>
