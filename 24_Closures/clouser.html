@@ -6,9 +6,55 @@
     <title>closure</title>
 </head>
 <body style="background-color: #212121;">
-    
+    <button id="orange">Orange</button>
+    <button id="green">green</button>
 </body>
 <script>
+    // function makeFunc(){
+    //     const name = "Mozilla";
+    //     function displayName() {
+    //         console.log(name);
+    //     }
+    //     return displayName;
+    // }
+
+    // const myFunc = makeFunc();
+    // myFunc();
+    // whole memory will be shared
+    // not displayName() function, but whole makeFunc i.e., lexical scope will.
+    // achieved that 
+    // name will get printed if it was not like that you will get error and name will never get printed.
+
+    // practical example
     
+    // document.getElementById("orange").onclick = function(){
+    //     document.body.style.backgroundColor = `orange`
+    // }
+    // document.getElementById("green").onclick = function(){
+    //     document.body.style.backgroundColor = `green`
+    // }
+
+    // cant copy and paste for 500 colors
+
+    // function clickHandler(color){
+    //     document.body.style.backgroundColor = `${color}`
+    // }
+
+    // document.getElementById('orange').onclick = clickHandler("orange")
+    // document.getElementById('green').onclick = clickHandler("green")
+
+    // problem directly we are getting green color without clicking the button.
+    // because it is expecting in return type a function and we passed execute the function.
+
+
+    function clickHandler(color){
+
+        return function(){
+            document.body.style.backgroundColor = `${color}`
+        }
+    }
+
+    document.getElementById('orange').onclick = clickHandler("orange")
+    document.getElementById('green').onclick = clickHandler("green")
 </script>
 </html>
