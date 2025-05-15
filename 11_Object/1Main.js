@@ -10,12 +10,17 @@
 // Object.create // ye banta hai constructor k through
 // const JsUser{} // ban gaya object
 
+// decleration of symbol
 const mySym = Symbol("key1")
 
 const JsUser = {
     name: "Suman", // internal me aise "name" : "Suman" process hota hai
-    "fullName": "Suman Prasad",
+    
+    "fullName": "Suman Prasad", // aab koi chance hi nhi hai ki . method se access kr lo. to square notation se hi access hoga.
+    
+    // object k keys me symbol ko add kiya aise jata hai
     [mySym]: "myKey1",
+    
     age: 21,
     location: "XYZ",
     email: "kuchbhinhi@gmail.com",
