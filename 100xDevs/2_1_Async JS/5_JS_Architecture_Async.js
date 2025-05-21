@@ -45,9 +45,18 @@ console.log("Expensive operation done");
     The call stack is a data structure that keeps track of the function calls in your program. It operates in LIFO manner, meaning the last 
     function that was called is the first one to be executed and removed from the stack.
 
-    When a function is called, it gets pushed onto the call stack. When the function completes, it is pop
+    When a function is called, it gets pushed onto the call stack. When the function completes, it is popped off the stack
 
 */
+// code
+function first() {
+    console.log("First");
+}
+function second() {
+    first();
+    console.log("second");
+}
+second();
 
 // Web APIs
 
