@@ -142,3 +142,101 @@ function callback(contents) {
     console.log(contents);
 }
 b.then(callback)
+
+// let us understand by putting the logs
+
+console.log("-----top of the file----");
+
+function readTheFile(resolve) {
+    console.log("readTheFile called");
+    setTimeout(function() {
+        console.log("callback based setTimeout completed");
+        resolve();
+    }, 3000);
+}
+
+function setTimeoutPromisifed(fileName) {
+    console.log("setTimeoutPromisified called");
+    // read the file and return its value
+    return new Promise(readTheFile);
+}
+
+const c = setTimeoutPromisifed();
+
+function callback() {
+    console.log("timer is done");
+}
+
+c.then(callback)
+
+console.log("-----end of the file-----")
+
+/* 
+
+    1. -----top of the file----
+    2. setTimeoutPromisified called
+    3. readTheFile called
+    4. -----end of the file-----
+    5. callback based setTimeout completed
+    6. timer is done
+
+*/
+
+// how promise class work under the hood.
+
+class Promise2 {
+    constructor(fn) {
+        this.fn = fn;
+        this.fn(() => {
+            this.resolve();
+        })
+    }
+    then(callback) {
+        this.resolve = callback;
+    }
+}
+
+function readTheFile(resolve) {
+    console.log("readTheFile called");
+    setTimeout(function() {
+        console.log("callback based setTimeout completed");
+        resolve();
+    }, 3000);
+}
+
+function setTimeoutPromisifed() {
+    return new Promise2(readTheFile)
+}
+
+let d= setTimeoutPromisifed();
+function callback() {
+    console.log("callback has been called");
+}
+d.then(callback);
+
+/*
+    A promise expects a function that performs an actual asynchronous task.
+
+    Once the async task is completed, call the argument of that function, passing
+    in the data obtained from the async task.
+
+    That data will then be passed to the function you define in '.then'
+
+    --------------------------------------------------------------------
+
+    Imagine you're ordering a pizza. when you place the order, the pizza place
+    gives you a recipt with a promise. "Your pizza will be delivered soon."
+
+    1) The order (Promise Creation): Just like you order a pizza, in JavaScript, you
+    create a promise when you start an action that will complete in the future. For example,
+    fetching data from a server
+
+    2) Waiting (Pending State): When you first make the order, you have to wait for it
+    to be delivered. Similarly, the promise is in a "pending" state until the action is complete.
+
+    3) Delivery (Promise Fullfillment): If the pizza is delivered successfully, the pizza place fulfills
+    their promise. In JavaScript, if the action completes successfully, the promise is "resolve", and you get
+    the result you wanted.
+
+    
+*/
