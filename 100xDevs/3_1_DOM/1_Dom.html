@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+	  <h1>Todo list</h1>
+	  <h4>1. Take class</h4>
+	  <h4>2. Go out to eat</h4>
+	  <div>
+	    <input type="text"></input>
+	    <button>Add Todo</button>
+	  </div>
+      <script>
+        // Fetching the title
+        const title = document.querySelector('h1');
+        console.log(title.innerHTML)
+
+        // Fetching the first TODO
+        const firstTodo = document.querySelector('h4');
+        console.log(firstTodo.innerHTML)
+
+        // Fetching the second TODO 
+        const secondTodo = document.querySelectorAll('h4')[1];
+        console.log(secondTodo.innerHTML)
+
+        // Update the first todo’s contents
+        const firstTodo2 = document.querySelector("h4");
+        firstTodo.innerHTML = "Dont' take class"
+
+        document.querySelector("button").innerHTML // 'Add Todo'
+
+        const inputElement = document.querySelector("input");
+        const value = inputElement.value;
+        console.log(value); // prints the value which is in input box
+      </script>
+	</body>
+</html>
