@@ -1,0 +1,24 @@
+<!-- Adding Element -->
+
+<!DOCTYPE html>
+<html>
+<body>
+  <div id="topDiv">
+    hi there
+  </div>
+  
+</body>
+
+<script>
+  // let divEl = document.createElement("div")
+  const divEl = document.createElement("div");
+  divEl.innerHTML = "hi there";
+  const parentEl = document.querySelector("body");
+  parentEl.appendChild(divEl);
+//   divEl ---> <div></div> ---> When we hover it, then it doesn't gets blue color because it does not exist in the dom.
+// to put we need another command
+// document.querySelector("body").appendChild(divEl);
+// body get another div.
+</script>
+
+</html>
