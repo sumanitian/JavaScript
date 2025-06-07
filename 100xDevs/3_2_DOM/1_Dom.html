@@ -1,0 +1,23 @@
+<body>
+    <input type="text"></input>
+    <button onclick="addTodo()">add todo!</button>
+
+    <script>
+        function addTodo(){
+            const value = document.querySelector("input").value;
+            const spanEl = document.createElement("span");
+            const buttonEl = document.createElement("button");
+            spanEl.innerHTML = value;
+            buttonEl.innerHTML = "Delete";
+            // Adding span and button to the div
+            const divEl = document.createElement("div")
+            divEl.appendChild(spanEl);
+            divEl.appendChild(buttonEl);
+
+            // Adding the div to the body
+            document.querySelector("body").appendChild(divEl);
+
+            // visit dom part 2 slide upto 4
+        }
+    </script>
+</body>
