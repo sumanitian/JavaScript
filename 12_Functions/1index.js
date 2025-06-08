@@ -30,8 +30,8 @@ console.log("Result: ", result);
 
 function loginUserMessage(username){
     if(username === undefined){
-        console.log("Please enter a username");
-        return
+        // console.log("Please enter a username");
+        return  "Please enter a username";
     }
     return `${username} just logged in`
 }
