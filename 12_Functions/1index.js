@@ -54,8 +54,12 @@ function calculateCartPrice(val1, val2, ...num1){
 } 
 console.log(calculateCartPrice(200, 400, 500, 2000)) // [500, 2000]
 
+// val1 gets the value 200
+// val2 gets the value 400
+// ...num1 collects the remaining arguments [500, 2000] into an array
+
 const user = {
-    username: "hitesh",
+    username: "suman",
     price: 199
 }
 

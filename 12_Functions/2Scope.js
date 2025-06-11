@@ -39,17 +39,17 @@ console.log(a) // 300
 
 function one(){
     const username = "suman"
+    const website = "youtube"  // Now accessible in both functions
 
     function two(){
-        const website = "youtube"
-        console.log(username); // suman
+        console.log(username);
     }
-    // console.log(website); 
     
+    console.log(website); // Now this works
     two();
 }
 
-// one()
+one()
 
 
 
